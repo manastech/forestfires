@@ -1,0 +1,10 @@
+# Sentinelhub user and pass
+config.py
+
+# Base and process img
+data/
+output/
+
+# python
+.ipynb_checkpoints/
+__pycache__
