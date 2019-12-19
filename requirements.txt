@@ -1,0 +1,5 @@
+sentinelsat==0.13
+rasterio==1.1.1
+jupyterlab=1.2.3
+matplotlib=3.1.2
+numpy=1.17.3
