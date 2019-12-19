@@ -1,0 +1,26 @@
+# Physical parameters
+L             : 0.3   # Width  [m]
+M             : 0.1   # Height [m]
+kappa         : 50    # Thermal conductivity [W/(mK)]
+heat_capacity : 466   # Heat capacity [J/K Kg]
+density       : 8050  # Density [Kg/m3]
+temp_init     : 293   # Initial temperature the plane [K]
+time          : 120    # Total time to similate [s]
+
+boundary:
+    left:
+        type: neumann
+        value: 0
+    top:
+        type: dirichlet
+        value: 500 # [K]
+    right:
+        type: neumann
+        value: 0
+    bottom:
+        type: dirichlet
+        value: 293  # [K]
+
+# Numerical parameters
+h      : 0.001   # Delta espacial [m]
+img_at : 5       # Save an image every n time percentage

@@ -1,0 +1,26 @@
+# Physical parameters
+L             : 0.3   # Width  [m]
+M             : 0.3   # Height [m]
+kappa         : 237   # Aluminium thermal conductivity [W/(mK)]
+heat_capacity : 900   # Aluminium heat capacity [J/K Kg]
+density       : 2705  # Aluminium density [Kg/m3]
+temp_init     : 293   # Initial temperature the plane [K]
+time          : 120   # Total time to similate [s]
+
+boundary:
+    left:
+        type: dirichlet
+        value: 500
+    top:
+        type: dirichlet
+        value: 500
+    right:
+        type: dirichlet
+        value: 293
+    bottom:
+        type: dirichlet
+        value: 293
+
+# Numerical parameters
+h      : 0.001   # Delta espacial [m]
+img_at : 5       # Save an image every n time percentage
