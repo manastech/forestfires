@@ -1,6 +1,6 @@
 # ForestFires
 
-## Install python deps
+## Install python deps (required to run the notebooks)
 ```bash
 # Install virtualenv and the python requirements
 $ python3 -m pip install --user virtualenv
