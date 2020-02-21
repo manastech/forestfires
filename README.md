@@ -2,6 +2,9 @@
 
 ## Initialization
 Clone the project repository into a folder of your choice within your local directory.
+```bash
+$ git clone https://github.com/manastech/forestfires.git
+```
 
 ## Install python deps (required to run the notebooks)
 Within your local project folder, run these commands.
