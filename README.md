@@ -1,6 +1,10 @@
 # ForestFires
 
+## Initialization
+Clone the project repository into a folder of your choice within your local directory.
+
 ## Install python deps (required to run the notebooks)
+Within your local project folder, run these commands.
 ```bash
 # Install virtualenv and the python requirements
 $ python3 -m pip install --user virtualenv
