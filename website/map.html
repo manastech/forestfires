@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+  <title>CSA</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+</head>
+<style>
+
+  body {
+    margin: 0;
+    text-align: left;
+    position: relative;
+  }
+
+  svg {
+    position: absolute;
+  }
+
+  text {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    text-anchor: start;
+    fill: #ff6b21;
+  }
+
+  .countryLabel {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  div {
+    font-family: "Noto Sans", sans-serif;
+    color: black;
+  }
+
+  #container {
+    font-size: 18px;
+    position: absolute;
+    padding: 140px 100px 140px 100px;
+  }
+
+  #title {
+    font-family: "Noto Serif", serif;
+    font-size: 48px;
+    margin-bottom: 50px;
+  }
+
+  #button {
+    border: 2px solid black;
+    text-transform: uppercase;
+    margin-top: 50px;
+    padding: 20px;
+    display: inline-block;
+  }
+
+  .country {
+    fill: #D3D3D3;
+  }
+
+  #features {
+    padding: 10px;
+    position: fixed;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    border-top: 1px solid #D3D3D3;
+    bottom: 0;
+    display: flex;
+    justify-content: start;
+  }
+
+  .feature {
+    margin: 10px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 24px;
+    font-family: 'Material Icons';
+    display: inline;
+    margin-right: 12px;
+  }
+
+  .featureLabel {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+
+</style>
+<body>
+  <svg></svg>
+  <div id="container">
+    <div id="title">Growth is Global</div>
+    <div>Our core product is research, based on our proprietary methodology.<br>We apply our research in consulting, mergers & acquisitions support.</div>
+    <div id="button">Access free research</div>
+  </div>
+  <div id="features">
+    <div class="feature">
+      <div class="header"><div class="icon">business</div><div class="featureLabel">  Global World</div></div>
+      <div>Large expansions into new global markets require the best research and understanding of many aspects.</div>
+    </div>
+    <div class="feature">
+      <div class="header"><div class="icon">translate</div><div class="featureLabel">  A complex industry</div></div>
+      <div>To tailor your services to an ever-growing and multifaceted industry you need to see the forest and the trees. Take a sneak peek at our industry landscape research.</div>
+    </div>
+    <div class="feature">
+      <div class="header"><div class="icon">business_center</div><div class="featureLabel">  Tools for key</div></div>
+      <div>Improve the efficiency by which you design and provide tools for global market access by making data-based product decisions.</div>
+    </div>
+  </div>
+</body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v0.min.js"></script>
+<script>
+
+  var data = [
+              {id:"AR", country:"Argentina", reports:36},
+              {id:"IT", country:"Italy", reports:84},
+              {id:"RU", country:"Russian Federation", reports:79},
+              {id:"BS", country:"Bahamas", reports:14}
+             ];
+
+  var centroid = d3.geo.path()
+      .projection(function(d) { return d; })
+      .centroid;
+
+  var projection = d3.geo.orthographic()
+      .clipAngle(90);
+
+  var path = d3.geo.path()
+      .projection(projection);
+
+  var svg = d3.select("svg")
+
+  var background = svg.append("rect")
+      .attr("fill", "#EEEEEE");
+  
+  var countries = svg.append("g");
+
+  d3.json("world-110m.json", function(error, world) {
+    console.log(error, world)
+    var topo = topojson.object(world, world.objects.countries).geometries,
+        i = -1;
+
+    var country = countries.selectAll(".country")
+        .data(topo)
+      .enter().append("path")
+        .attr("class", "country")
+        .attr("d", path);
+
+    var labels = countries.append("g");
+
+    var countryLabel = labels.append("text")
+        .attr("class", "countryLabel")
+        .attr("y", -18);
+
+    var reportsLabel = labels.append("text")
+
+
+    step();
+
+    function step() {
+      if (++i >= data.length) i = 0;
+
+      var datum = topo.find(function (item) {
+        return item.id == data[i].id
+      });
+
+      country.transition()
+          .style("fill", function(d) { return d.id === datum.id ? "#ff6b21" : "#d3d3d3"; });
+
+
+
+      d3.transition()
+          .duration(2000)
+          .tween("rotate", function() {
+
+            var point = centroid(datum),
+            size = getSize(datum),
+            rotate = d3.interpolate(projection.rotate(), [-point[0], -point[1] + 20]);
+
+      var t0 = labels.transition()
+              .duration(500)
+              .attr("opacity", 0)
+              .each("end", function(d) {
+                d3.select(this).attr("transform", "translate(" + (size.x + size.width + 5) + "," + (size.y - 5) + ")");
+                countryLabel.text(data[i].country);
+                reportsLabel.text(data[i].reports + " reports");
+              })
+
+      var t1 = t0.transition()
+              .duration(500)
+              .delay(1500)
+              .attr("opacity", 1)
+
+            return function(t) {
+              projection.rotate(rotate(t));
+              country.attr("d", path);
+            };
+          })
+        .transition()
+        .each("end", step);
+
+    }
+  });
+
+  function rotation(point) {
+    return ;
+  }
+
+  function getSize(topo) {
+    var point = centroid(topo),
+        projection = d3.geo.orthographic()
+          .scale(window.innerHeight / 2)
+          .translate([Math.max(window.innerWidth / 2, window.innerWidth - window.innerHeight / 2 - 100), window.innerHeight * 2 / 3])
+          .clipAngle(90)
+          .rotate([-point[0], -point[1] + 20])
+          .precision(0.6),
+        path = d3.geo.path()
+          .projection(projection),
+        dummy = svg.append("path")
+          .datum(topo)
+          .attr("d", path),
+        boundingBox = dummy.node().getBBox();
+
+    dummy.remove();
+
+    return boundingBox;
+  }
+
+  function resize() {
+
+    svg
+      .attr("width", window.innerWidth)
+      .attr("height", window.innerHeight)
+
+    background
+      .attr("width", window.innerWidth)
+      .attr("height", window.innerHeight)
+
+    projection
+      .translate([Math.max(window.innerWidth / 2, window.innerWidth - window.innerHeight / 2 - 100), window.innerHeight * 2 / 3])
+      .scale(window.innerHeight / 2)
+
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+
+</script>

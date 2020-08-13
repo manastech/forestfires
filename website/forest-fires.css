@@ -1,0 +1,317 @@
+:root {
+    --fire-boundary-size: auto;
+    --fire-boundary-background-position: auto auto;
+    --fire-boundary-frame-position: auto auto;
+    --fire-boundary-frame-width: 150px;
+    --fire-boundary-frame-height: 150px;
+    --fire-boundary-frame-x: 350px;
+    --fire-boundary-frame-y: 350px;
+}
+
+body {
+    font-family: 'Chivo', sans-serif;
+    margin: 0;
+}
+
+.sections {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+.section {
+    position: relative;
+    width: calc(100vw - 144px);
+    height: calc(100vh - 144px);
+    padding: 72px;
+    scroll-snap-align: start;
+}
+
+.white {
+    color: white;
+}
+
+.orange {
+    color: #FF5722;
+}
+
+.grey {
+    color: #999999;
+}
+
+.dark-grey {
+    color: #404040;
+}
+
+.title {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 12px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 72px;
+}
+
+.frame {
+    outline: 2px rgba(255, 255, 255, 0.25) solid;
+    box-sizing: border-box;
+    outline-offset: -2px;
+    border-style: solid;
+    border-width: 2px;
+    border-image-source: url(assets/white-corner.svg);
+    border-image-slice: 50%;
+    border-image-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* People */
+
+#chart {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(5, 1fr) 48px;
+    height: 66vh;
+    align-items: end;
+}
+
+#chart .bar {
+    background-color: #404040;
+    margin: 0 20%;
+    grid-row: 1 / 6;
+}
+
+#chart .rule {
+    content: '';
+    grid-column: 1 / 21;
+    grid-row: 1;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    align-self: start;
+}
+
+#chart span {
+    grid-column: 1 / 21;
+    grid-row: 6;
+    margin: 0;
+}
+
+/* Global biodiversity */
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -30px;
+}
+
+.animal {
+    outline: 2px rgba(64, 64, 64, 0.25) solid;
+    border-image-source: url(assets/grey-corner.svg);
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+}
+
+.animal img {
+    width: 100px;
+    height: 100px;
+    mix-blend-mode: multiply;
+}
+
+.disabled {
+    filter: saturate(0);
+    opacity: 0.1;
+}
+
+/* We developed tools to fight this */
+
+#we-developed-tools-to-fight-this {
+    background-color: #333333;
+    text-align: center;
+    display: flex;
+}
+
+#we-developed-tools-to-fight-this .content {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-self: center;
+    margin: auto;
+}
+
+#icons {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 72px);
+    height: 72px;
+    margin: 0 auto;
+}
+
+#icons .frame {
+    width: 100%;
+    height: 100%;
+}
+
+#icons .connector {
+    display: inline-block;
+    content: '';
+    width: 72px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Fire boundary detection */
+
+#fire-boundary-detection {
+    background-image: url(assets/fire-boundary-detection-greyscale.jpg);
+    background-size: var(--fire-boundary-size);
+    background-position: var(--fire-boundary-background-position);
+}
+
+#fire-boundary-detection .content {
+    position: absolute;
+    top: 355px;
+    left: 550px;
+    width: 600px;
+}
+
+#drone {
+    position: absolute;
+    top: 335px;
+    left: 550px;
+    transform:translate(-30px,-100%)
+}
+
+#mask {
+    position: absolute;
+    overflow: hidden;
+    width: var(--fire-boundary-frame-width);
+    height: var(--fire-boundary-frame-height);
+    left: var(--fire-boundary-frame-x);
+    top: var(--fire-boundary-frame-y);
+    background-image: url(assets/fire-boundary-detection-color.jpg);
+    background-size: var(--fire-boundary-size);
+    background-position: var(--fire-boundary-frame-position);
+}
+
+#value {
+    margin: 6px;
+    background: white;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Forecasting wildfire behavior */
+
+#forecasting-wildfire-behavior {
+    background-image: url(assets/forecasting-wildfire-behavior.jpg);
+    background-size: cover;
+}
+
+#forecasting-wildfire-behavior .content {
+    position: absolute;
+    top: 355px;
+    left: 550px;
+    width: 600px;
+}
+
+#weather-station {
+    position: absolute;
+    top: 335px;
+    left: 550px;
+    transform:translate(-20px,-100%)
+}
+
+#fire {
+    position: absolute;
+    top: 50px;
+    transform: translateX(-20%);
+}
+
+#fire path {
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 200px;
+    stroke-linejoin: round;
+    paint-order: stroke;
+}
+
+/* Contact us */
+
+#contact-us {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF5722;
+}
+
+#contact-us .white.title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+    align-self: end;
+}
+
+.button {
+    justify-self: center;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: auto;
+    height: auto;
+    color: white;
+    transition: ease-in-out all 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.button span {
+    margin: 36px 60px;
+}
+
+#developed-by {
+    justify-self: end;
+    position: absolute;
+    bottom: 12px;
+}
+
+#developed-by.text {
+    margin-bottom: 0;
+}
+
+#developed-by span::before {
+    content:'';
+    display: inline-block;
+    border-bottom:1px rgba(255, 255, 255, 0.25) solid;
+    width: 150px;
+    margin: 0 12px 6px 0;
+}
+
+#developed-by span::after {
+    content:'';
+    display: inline-block;
+    border-bottom:1px rgba(255, 255, 255, 0.25) solid;
+    width: 150px;
+    margin: 0 0 6px 12px;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+}
