@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="40px" height="41px" viewBox="0 0 40 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
-    <title>Wind</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home" transform="translate(-700.000000, -5085.000000)" fill="#474747">
-            <g id="We-developed-tools-to-fight-this" transform="translate(0.000000, 4500.000000)">
-                <path d="M732,599.076807 L730,599.076807 L730,605.076807 L722,605.076807 L722,596.676807 C725.134,595.600807 726.8,592.186807 725.724,589.052807 C724.646,585.918807 721.234,584.250807 718.1,585.326807 C714.966,586.404807 713.298,589.818807 714.376,592.952807 C714.976,594.700807 716.35,596.076807 718.1,596.676807 L718.1,605.076807 L712,605.076807 L706,599.076807 L700,599.076807 L708,607.076807 L700,615.076807 L706,615.076807 L712.1,609.076807 L718.1,609.076807 L718.1,625.076807 L722,625.076807 L722,609.076807 L730,609.076807 L730,615.076807 L732,615.076807 L740,607.076807 L732,599.076807 Z" id="Wind"></path>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<path id="Wind" class="st0" d="M36,18h-2v6h-8v-8.4c3.1-1.1,4.8-4.5,3.7-7.6c-1.1-3.1-4.5-4.8-7.6-3.7c-3.1,1.1-4.8,4.5-3.7,7.6
+	c0.6,1.7,2,3.1,3.7,3.7V24H16l-6-6H4l8,8l-8,8h6l6.1-6h6v16H26V28h8v6h2l8-8L36,18z"/>
 </svg>
