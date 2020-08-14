@@ -4,8 +4,13 @@
     --fire-boundary-frame-position: auto auto;
     --fire-boundary-frame-width: 150px;
     --fire-boundary-frame-height: 150px;
-    --fire-boundary-frame-x: 350px;
-    --fire-boundary-frame-y: 350px;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+    :root {
+        --fire-boundary-frame-width: 100px;
+        --fire-boundary-frame-height: 100px;
+    }
 }
 
 * {
@@ -22,10 +27,17 @@ body {
     overflow: hidden;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
     body {
         font-size: 16px;
         line-height: 24px;
+    }
+}
+
+@media only screen and (max-device-height: 300px) and (orientation: landscape) {
+    body {
+        font-size: 14px;
+        line-height: 18px;
     }
 }
 
@@ -37,10 +49,10 @@ h1 {
     margin-block-end: 24px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
     h1 {
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 30px;
+        line-height: 36px;
         margin-block-start: 12px;
         margin-block-end: 12px;
     }
@@ -54,7 +66,7 @@ h2 {
     margin-block-end: 18px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
     h2 {
         font-size: 18px;
         line-height: 30px;
@@ -76,7 +88,7 @@ h2 {
     position: relative;
 }
 
-@media only screen and (max-device-width: 900px) {
+@media only screen and (max-device-width: 840px) {
     .section {
         padding: 30px;
     }
@@ -132,28 +144,85 @@ h2 {
     display: grid;
     align-items: center;
     grid-template-columns: 450px 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    background-image: url(assets/drone.jpg);
+    grid-template-rows: 1fr auto 1fr;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%), url(assets/drone.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    padding: 0 144px;
+    padding: 0 120px;
 }
 
-#forest-fires > * {
+@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+    #forest-fires {
+        padding: 48px 120px 48px 72px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #forest-fires {
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr;
+        padding: 18px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+#forest-fires .content {
     grid-column: 1;
     grid-row: 2;
+    width: min-content;
+    padding: 0 30px;
+}
+
+@media only screen and (max-device-width: 840px) {
+    #forest-fires .content {
+        grid-row: 1;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-device-width: 300px) and (orientation: portrait) {
+    #forest-fires .content {
+        padding: 0 18px;
+    }
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+    #forest-fires .content {
+        align-self: self-start;
+    }
 }
 
 #forest-fires .frame {
     display: inline-flex;
-    margin-left: -30px;
     padding: 0 30px;
+    width: max-content;
     height: 120px;
     font-size: 72px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin: 0 -30px 30px -30px;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #forest-fires .frame {
+        height: 90px;
+        font-size: 36px;
+        width: calc(100% + 60px);
+    }
+}
+
+@media only screen and (max-device-width: 300px) and (orientation: portrait), only screen and (max-device-height: 300px) and (orientation: landscape) {
+    #forest-fires .frame {
+        height: 72px;
+        font-size: 30px;
+        margin: 0 -18px 18px -18px;
+        width: calc(100% + 36px);
+    }
 }
 
 #forest-fires .button {
@@ -168,8 +237,22 @@ h2 {
     grid-column: 1;
     grid-row: 3;
     transition: all 0.5s;
-    border-left: 144px #FF5722 solid;
-    margin-left: -144px;
+    border-left: 150px #FF5722 solid;
+    margin-left: -120px;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #forest-fires .button {
+        align-self: end;
+        justify-content: center;
+        width: 100%;
+        grid-row: 2;
+        border-left: none;
+        margin-left: 0;
+        padding: 0 36px;
+        font-size: 18px;
+        height: 60px;
+    }
 }
 
 #forest-fires .button:hover {
@@ -193,15 +276,27 @@ h2 {
     grid-template-rows: auto 1fr;
 }
 
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+    #people {
+        padding: 12px 30px;
+    }
+}
+
 #people .content {
     margin-bottom: 48px;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+    #people .content {
+        margin-bottom: 24px;
+    }
 }
 
 #chart {
     justify-content: stretch;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(5, 1fr) 48px;
+    grid-template-rows: repeat(5, 1fr) auto;
     height: 100%;
     align-items: end;
 }
@@ -225,6 +320,8 @@ h2 {
     grid-column: 1 / 21;
     grid-row: 6;
     margin: 0;
+    padding: 12px 0;
+    line-height: 18px;
 }
 
 /* Global biodiversity */
@@ -241,42 +338,58 @@ h2 {
 #grid {
     align-self: end;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     column-gap: 30px;
     row-gap: 30px;
 }
 
-.animal:nth-child(n + 28) {
+.animal:nth-child(n + 31) {
     display: none;
 }
 
-@media only screen and (max-device-width: 1200px) {
+/* iPhone 6/7/8 */
+@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(8, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
     }
 
-    .animal:nth-child(n + 25) {
+    .animal:nth-child(n + 17) {
         display: none;
     }
 }
 
-@media only screen and (max-device-width: 900px) {
+@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) {
     #grid {
-        grid-template-columns: repeat(6, 1fr);
-        column-gap: 24px;
-        row-gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
     }
 
-    .animal:nth-child(n + 25) {
+    .animal:nth-child(n + 17) {
         display: none;
     }
 }
 
-@media only screen and (max-device-width: 600px) {
+/* iPhone 6/7/8 Plus*/
+@media only screen and (device-width: 736px) and (device-height: 414px) and (orientation: landscape) {
     #grid {
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 18px;
-        row-gap: 18px;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 17) {
+        display: none;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) {
+    #grid {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
     }
 
     .animal:nth-child(n + 21) {
@@ -284,13 +397,119 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+/* iPhone X */
+@media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
+    #grid {
+        grid-template-columns: repeat(9, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 19) {
+        display: none;
+    }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
         row-gap: 12px;
     }
 
+    .animal:nth-child(n + 25) {
+        display: none;
+    }
+}
+
+/* iPad */
+@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+    #grid {
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 22) {
+        display: none;
+    }
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    #grid {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 21) {
+        display: none;
+    }
+}
+
+/* iPad Pro*/
+@media only screen and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+    #grid {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 33) {
+        display: none;
+    }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+    #grid {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 31) {
+        display: none;
+    }
+}
+
+/* Default */
+@media only screen and (max-device-width: 840px) and (max-device-height: 450px) and (orientation: landscape) {
+    #grid {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 17) {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 750px) and (max-device-height: 450px) and (orientation: landscape) {
+    .animal:nth-child(n + 17) {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 750px) and (max-device-height: 300px) and (orientation: landscape) {
+    .animal:nth-child(n + 9) {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 450px) and (max-device-height: 840px) and (orientation: portrait) {
+    #grid {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 12px;
+        row-gap: 12px;
+    }
+
+    .animal:nth-child(n + 25) {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 450px) and (max-device-height: 750px) and (orientation: portrait) {
     .animal:nth-child(n + 17) {
         display: none;
     }
@@ -339,16 +558,13 @@ h2 {
     opacity: 0.25;
 }
 
-@media only screen and (max-device-width: 480px) {
-}
-
 #icons .frame img {
     width: 48px;
     height: 48px;
     margin: 18px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-height: 300px) and (orientation: landscape) {
     #icons .frame img {
         margin: 12px;
         width: 24px;
@@ -366,48 +582,100 @@ h2 {
 
 /* Fire boundary detection */
 
-/* #fire-boundary-detection {
+#fire-boundary-detection {
     background-image: url(assets/fire-boundary-detection-greyscale.jpg);
     background-size: var(--fire-boundary-size);
     background-position: var(--fire-boundary-background-position);
-} */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 33%;
+}
 
-#fire-boundary-detection .content {
-    position: absolute;
-    top: 355px;
-    left: 550px;
-    width: 600px;
+@media only screen and (max-device-width: 1200px) {
+    #fire-boundary-detection {
+        padding: 0 20%;
+    }
+}
+
+@media only screen and (max-device-width: 840px) {
+    #fire-boundary-detection {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    #fire-boundary-detection {
+        padding: 0 18px;
+    }
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #fire-boundary-detection {
+        display: grid;
+        column-gap: 18px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 1fr;
+        padding: 30px 18px;
+    }
 }
 
 #drone {
-    position: absolute;
-    top: 335px;
-    left: 550px;
-    transform:translate(-30px,-100%)
+    width: 250px;
+    margin: 30px -42px;
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #drone {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    #drone {
+        width: 180px;
+        margin: 18px -12px;
+    }
 }
 
 #mask {
-    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     overflow: hidden;
     width: var(--fire-boundary-frame-width);
     height: var(--fire-boundary-frame-height);
-    left: var(--fire-boundary-frame-x);
-    top: var(--fire-boundary-frame-y);
     background-image: url(assets/fire-boundary-detection-color.jpg);
     background-size: var(--fire-boundary-size);
     background-position: var(--fire-boundary-frame-position);
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #mask {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #fire-boundary-detection .content {
+        grid-column: 2;
+        grid-row: 2;
+    }
 }
 
 #value {
-    margin: 6px;
+    margin: 4px;
     background: white;
     color: black;
     font-size: 12px;
+    line-height: 18px;
     font-weight: 700;
-    padding: 2px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    padding: 0 4px;
 }
 
 /* Forecasting wildfire behavior */
@@ -428,9 +696,17 @@ h2 {
     }
 
     #forecasting-wildfire-behavior > * {
+        grid-template-columns: 1fr 3fr;
         grid-column: 1;
     }
 
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #forecasting-wildfire-behavior {
+        grid-template-columns: 1fr 2fr;
+        column-gap: 30px;
+    }    
 }
 
 #forecasting-wildfire-behavior .content {
@@ -440,6 +716,12 @@ h2 {
 #forecasting-wildfire-behavior .content img {
     width: 100%;
     margin: 48px 0;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+    #forecasting-wildfire-behavior .content img {
+        margin: 24px 0;
+    }
 }
 
 #weather-station {
@@ -452,9 +734,15 @@ h2 {
     height: 100%;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px)  {
     #weather-station {
         padding: 18px;
+    }
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    #weather-station {
+        padding: 0;
     }
 }
 
@@ -493,7 +781,7 @@ h2 {
     padding: 36px 60px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
     .button {
         font-size: 18px;
         margin: 18px;
@@ -529,7 +817,7 @@ a.button {
     height: 48px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
     #logo {
         margin: 24px auto;
         height: 30px;
