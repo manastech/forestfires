@@ -52,7 +52,6 @@ function handleResize() {
 			(background.width - frame.width / 2 - frame.x) / (picture.width - fire.width / 2 - fire.x),
 			(background.height - frame.height / 2 - frame.y) / (picture.height - fire.height / 2 - fire.y)
 		)
-	console.log(frame, scale)
 	document.querySelector('#value').textContent = scale.toFixed(3)
 	style.setProperty('--fire-boundary-size', `${picture.width * scale}px ${picture.height * scale}px`)
 	style.setProperty('--fire-boundary-background-position', `${(frame.x + frame.width / 2) - (fire.x + fire.width / 2) * scale}px ${(frame.y + frame.height / 2) - (fire.y + fire.height / 2) * scale}px`)
