@@ -6,7 +6,7 @@
     --fire-boundary-frame-height: 150px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     :root {
         --fire-boundary-frame-width: 100px;
         --fire-boundary-frame-height: 100px;
@@ -27,14 +27,14 @@ body {
     overflow: hidden;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     body {
         font-size: 16px;
         line-height: 24px;
     }
 }
 
-@media only screen and (max-device-height: 300px) and (orientation: landscape) {
+@media only screen and (max-height: 300px) and (orientation: landscape) {
     body {
         font-size: 14px;
         line-height: 18px;
@@ -49,7 +49,7 @@ h1 {
     margin-block-end: 24px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape)  {
     h1 {
         font-size: 30px;
         line-height: 36px;
@@ -66,7 +66,7 @@ h2 {
     margin-block-end: 18px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape)  {
     h2 {
         font-size: 18px;
         line-height: 30px;
@@ -88,13 +88,13 @@ h2 {
     position: relative;
 }
 
-@media only screen and (max-device-width: 840px) {
+@media only screen and (max-width: 840px) {
     .section {
         padding: 30px;
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     .section {
         padding: 18px;
     }
@@ -117,7 +117,7 @@ h2 {
     line-height: 24px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     .small {
         font-size: 14px;
         line-height: 18px;
@@ -153,7 +153,7 @@ h2 {
     padding: 0 120px;
 }
 
-@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
     #forest-fires {
         padding: 48px 120px 48px 72px;
         grid-template-columns: 1fr;
@@ -161,7 +161,7 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     #forest-fires {
         grid-template-columns: auto;
         grid-template-rows: auto 1fr;
@@ -179,20 +179,20 @@ h2 {
     padding: 0 30px;
 }
 
-@media only screen and (max-device-width: 840px) {
+@media only screen and (max-width: 840px) {
     #forest-fires .content {
         grid-row: 1;
         width: 100%;
     }
 }
 
-@media only screen and (max-device-width: 300px) and (orientation: portrait) {
+@media only screen and (max-width: 300px) and (orientation: portrait) {
     #forest-fires .content {
         padding: 0 18px;
     }
 }
 
-@media only screen and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
     #forest-fires .content {
         align-self: self-start;
     }
@@ -208,7 +208,7 @@ h2 {
     margin: 0 -30px 30px -30px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     #forest-fires .frame {
         height: 90px;
         font-size: 36px;
@@ -216,7 +216,7 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 300px) and (orientation: portrait), only screen and (max-device-height: 300px) and (orientation: landscape) {
+@media only screen and (max-width: 300px) and (orientation: portrait), only screen and (max-height: 300px) and (orientation: landscape) {
     #forest-fires .frame {
         height: 72px;
         font-size: 30px;
@@ -241,7 +241,7 @@ h2 {
     margin-left: -120px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     #forest-fires .button {
         align-self: end;
         justify-content: center;
@@ -276,7 +276,7 @@ h2 {
     grid-template-rows: auto 1fr;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape)  {
     #people {
         padding: 12px 30px;
     }
@@ -286,7 +286,7 @@ h2 {
     margin-bottom: 48px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape)  {
     #people .content {
         margin-bottom: 24px;
     }
@@ -348,7 +348,7 @@ h2 {
 }
 
 /* iPhone 6/7/8 */
-@media only screen and (device-width: 667px) and (device-height: 375px) and (orientation: landscape) {
+@media only screen and (width: 667px) and (height: 375px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 12px;
@@ -360,7 +360,7 @@ h2 {
     }
 }
 
-@media only screen and (device-width: 375px) and (device-height: 667px) and (orientation: portrait) {
+@media only screen and (width: 375px) and (height: 667px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
@@ -373,7 +373,7 @@ h2 {
 }
 
 /* iPhone 6/7/8 Plus*/
-@media only screen and (device-width: 736px) and (device-height: 414px) and (orientation: landscape) {
+@media only screen and (width: 736px) and (height: 414px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 12px;
@@ -385,7 +385,7 @@ h2 {
     }
 }
 
-@media only screen and (device-width: 414px) and (device-height: 736px) and (orientation: portrait) {
+@media only screen and (width: 414px) and (height: 736px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
@@ -398,7 +398,7 @@ h2 {
 }
 
 /* iPhone X */
-@media only screen and (device-width: 812px) and (device-height: 375px) and (orientation: landscape) {
+@media only screen and (width: 812px) and (height: 375px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(9, 1fr);
         column-gap: 12px;
@@ -410,7 +410,7 @@ h2 {
     }
 }
 
-@media only screen and (device-width: 375px) and (device-height: 812px) and (orientation: portrait) {
+@media only screen and (width: 375px) and (height: 812px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
@@ -423,7 +423,7 @@ h2 {
 }
 
 /* iPad */
-@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+@media only screen and (width: 1024px) and (height: 768px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(7, 1fr);
         column-gap: 12px;
@@ -435,7 +435,7 @@ h2 {
     }
 }
 
-@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+@media only screen and (width: 768px) and (height: 1024px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(5, 1fr);
         column-gap: 12px;
@@ -448,7 +448,7 @@ h2 {
 }
 
 /* iPad Pro*/
-@media only screen and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+@media only screen and (width: 1366px) and (height: 1024px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 12px;
@@ -460,7 +460,7 @@ h2 {
     }
 }
 
-@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+@media only screen and (width: 1024px) and (height: 1366px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(5, 1fr);
         column-gap: 12px;
@@ -473,7 +473,7 @@ h2 {
 }
 
 /* Default */
-@media only screen and (max-device-width: 840px) and (max-device-height: 450px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (max-height: 450px) and (orientation: landscape) {
     #grid {
         grid-template-columns: repeat(8, 1fr);
         column-gap: 12px;
@@ -485,19 +485,19 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 750px) and (max-device-height: 450px) and (orientation: landscape) {
+@media only screen and (max-width: 750px) and (max-height: 450px) and (orientation: landscape) {
     .animal:nth-child(n + 17) {
         display: none;
     }
 }
 
-@media only screen and (max-device-width: 750px) and (max-device-height: 300px) and (orientation: landscape) {
+@media only screen and (max-width: 750px) and (max-height: 300px) and (orientation: landscape) {
     .animal:nth-child(n + 9) {
         display: none;
     }
 }
 
-@media only screen and (max-device-width: 450px) and (max-device-height: 840px) and (orientation: portrait) {
+@media only screen and (max-width: 450px) and (max-height: 840px) and (orientation: portrait) {
     #grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
@@ -509,7 +509,7 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 450px) and (max-device-height: 750px) and (orientation: portrait) {
+@media only screen and (max-width: 450px) and (max-height: 750px) and (orientation: portrait) {
     .animal:nth-child(n + 17) {
         display: none;
     }
@@ -564,7 +564,7 @@ h2 {
     margin: 18px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-height: 300px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-height: 300px) and (orientation: landscape) {
     #icons .frame img {
         margin: 12px;
         width: 24px;
@@ -593,25 +593,25 @@ h2 {
     padding: 0 33%;
 }
 
-@media only screen and (max-device-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     #fire-boundary-detection {
         padding: 0 20%;
     }
 }
 
-@media only screen and (max-device-width: 840px) {
+@media only screen and (max-width: 840px) {
     #fire-boundary-detection {
         padding: 0 10%;
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     #fire-boundary-detection {
         padding: 0 18px;
     }
 }
 
-@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
     #fire-boundary-detection {
         display: grid;
         column-gap: 18px;
@@ -626,7 +626,7 @@ h2 {
     margin: 30px -42px;
 }
 
-@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
     #drone {
         grid-column: 1;
         grid-row: 1;
@@ -636,7 +636,7 @@ h2 {
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     #drone {
         width: 180px;
         margin: 18px -12px;
@@ -656,7 +656,7 @@ h2 {
     background-repeat: no-repeat;
 }
 
-@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
     #mask {
         grid-column: 2;
         grid-row: 1;
@@ -689,7 +689,7 @@ h2 {
     column-gap: 90px;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
     #forecasting-wildfire-behavior {
         grid-template-columns: 1fr;
         grid-template-rows: 2fr 3fr;
@@ -702,7 +702,7 @@ h2 {
 
 }
 
-@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
     #forecasting-wildfire-behavior {
         grid-template-columns: 1fr 2fr;
         column-gap: 30px;
@@ -718,7 +718,7 @@ h2 {
     margin: 48px 0;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape)  {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape)  {
     #forecasting-wildfire-behavior .content img {
         margin: 24px 0;
     }
@@ -734,13 +734,13 @@ h2 {
     height: 100%;
 }
 
-@media only screen and (max-device-width: 480px)  {
+@media only screen and (max-width: 480px)  {
     #weather-station {
         padding: 18px;
     }
 }
 
-@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 840px) and (orientation: landscape) {
     #weather-station {
         padding: 0;
     }
@@ -781,7 +781,7 @@ h2 {
     padding: 36px 60px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     .button {
         font-size: 18px;
         margin: 18px;
@@ -817,7 +817,7 @@ a.button {
     height: 48px;
 }
 
-@media only screen and (max-device-width: 480px), only screen and (max-device-width: 840px) and (orientation: landscape) {
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
     #logo {
         margin: 24px auto;
         height: 30px;
