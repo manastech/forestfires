@@ -269,6 +269,47 @@ h2 {
     background-repeat: none;
 }
 
+/* Map */
+
+#map {
+    background-color: #333;
+    color: #FF5722;
+    display: flex;
+    align-items: center;
+}
+
+#map img {
+    position: absolute;
+    height: 150vh;
+    top: 0;
+    right: -50vh;
+}
+
+@media only screen and (orientation: portrait)  {
+    #map img {
+        height: 100vh;
+        right: -50vh;
+    }
+}
+
+#map .content {
+    z-index: 1;
+}
+
+#map .description{
+    width: 50%;
+}
+
+@media only screen and (orientation: portrait)  {
+    #map .description{
+        width: 100%;
+    }
+}
+
+#map > h1 {
+    width: max-content;
+}
+
 /* People */
 
 #people {
