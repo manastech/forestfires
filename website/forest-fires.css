@@ -74,7 +74,8 @@ h2 {
 }
 
 .sections {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     scroll-snap-type: y proximity;
     height: 100vh;
 }
