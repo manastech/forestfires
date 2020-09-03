@@ -109,6 +109,10 @@ h2 {
     color: #FF5722;
 }
 
+.green {
+    color: #4caf50;
+}
+
 .grey {
     color: #999999;
 }
@@ -234,11 +238,11 @@ h2 {
     justify-self: start;
     font-size: 24px;
     height: 78px;
-    background-color: #FF5722;
+    background-color: #4caf50;
     grid-column: 1;
     grid-row: 3;
     transition: all 0.5s;
-    border-left: 150px #FF5722 solid;
+    border-left: 150px #4caf50 solid;
     margin-left: -120px;
 }
 
@@ -257,8 +261,8 @@ h2 {
 }
 
 #forest-fires .button:hover {
-    background-color: #ff7043;
-    border-left-color:#ff7043;
+    background-color: #81c784;
+    border-left-color:#81c784;
 }
 
 /* An inneficient approach */
@@ -797,7 +801,7 @@ h2 {
     grid-template-rows: 1fr auto;
     align-items: stretch;
     justify-content: center;
-    background-color: #FF5722;
+    background-color: #4caf50;
 }
 
 #contact-us .content {
@@ -849,7 +853,7 @@ a.button {
     top: -12px;
     transform: translateX(-50%);
     position: absolute;
-    background-color: #FF5722;
+    background-color: #4caf50;
     padding: 0 24px;
 }
 
