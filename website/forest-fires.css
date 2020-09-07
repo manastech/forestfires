@@ -575,7 +575,6 @@ h2 {
 }
 
 .disabled {
-    filter: saturate(0);
     opacity: 0.1;
 }
 
