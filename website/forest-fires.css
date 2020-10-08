@@ -17,14 +17,23 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
+@media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
+    html {
+        scroll-snap-type: unset;
+    }
+}
+
 body {
+    width: 100vw;
     font-family: 'Chivo', sans-serif;
     margin: 0;
     font-size: 18px;
     line-height: 24px;
     color: #404040;
-    height: 100vh;
-    overflow: hidden;
 }
 
 @media only screen and (max-width: 480px), only screen and (max-width: 840px) and (orientation: landscape) {
@@ -73,16 +82,10 @@ h2 {
     }
 }
 
-.sections {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-snap-type: y proximity;
-    height: 100vh;
-}
-
-.section {
+section {
     position: relative;
     width: 100vw;
+    overflow-x: hidden;
     min-height: 100vh;
     padding: 72px;
     scroll-snap-align: start;
@@ -90,13 +93,13 @@ h2 {
 }
 
 @media only screen and (max-width: 840px) {
-    .section {
+    section {
         padding: 30px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .section {
+    section {
         padding: 18px;
     }
 }
