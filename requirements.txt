@@ -1,6 +1,6 @@
 sentinelsat==0.13
 rasterio==1.1.1
-jupyterlab==1.2.3
+jupyterlab==1.2.21
 matplotlib==3.1.2
 numpy==1.17.3
 pyyaml==5.3
